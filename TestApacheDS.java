@@ -58,7 +58,7 @@ public class TestApacheDS {
     private boolean testBinding(){
         conn.connect();
         if(useTls){
-            ldap.startTls();
+            conn.startTls();
         }
         BindResponse resp = conn.bind(generateSaslGssApiRequest());
         org.apache.directory.api.ldap.model.message.ResultCodeEnum.processResponse(resp);
